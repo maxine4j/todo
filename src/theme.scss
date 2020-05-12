@@ -1,0 +1,45 @@
+:root {
+    --col-pri: rgb(81, 189, 124);
+    --col-bg: rgb(255, 255, 255);
+    --col-text: rgb(56, 56, 56);
+    --col-card-1: rgb(240, 240, 240);
+    --col-card-2: rgb(228, 228, 228);
+    --col-border: rgba(134, 134, 134, 0.404);
+    --shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    --font-size: 16px;
+    --primary-grad: linear-gradient(96.33deg, #82bc25 0, #50bd7b 100%);
+    --disabled-grad: linear-gradient(96.33deg, #929292 0, #7a7a7a 100%);
+
+    background-color: var(--col-bg);
+    color: var(--col-text);
+    font-family: "Helvetica Neue";
+}
+
+input {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--col-bg);
+    box-shadow: var(--shadow);
+    border: none;
+}
+
+.btn-primary {
+    background: var(--primary-grad);
+    border-radius: 5px;
+    color: white;
+    font-family: inherit;
+    border: none;
+    padding: 10px 16px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+
+    &:disabled {
+        background: var(--disabled-grad);
+        cursor: auto;
+    }
+
+    &:hover {
+        transition: box-shadow .25s ease, transform .25s ease;
+    }
+}

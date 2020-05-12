@@ -1,0 +1,21 @@
+form {
+    border-radius: 5px;
+    background-color: var(--col-card-1);
+    padding: 20px;
+
+    .error {
+        color: rgb(216, 74, 74);
+        text-align: center;
+        margin: 20px;
+    }
+
+    input {
+        display: block;
+        margin: 10px auto;
+    }
+
+    button {
+        display: block;
+        margin: 20px auto;
+    }
+}
