@@ -1,8 +1,7 @@
 form {
     border-radius: 5px;
-    background-color: var(--col-card-1);
     padding: 20px;
-    box-shadow: var(--shadow);
+    margin: auto;
 
     .error {
         color: rgb(216, 74, 74);
@@ -13,7 +12,7 @@ form {
     input {
         display: block;
         margin: 10px auto;
-        width: 260px;
+        max-width: 260px;
     }
 
     button {

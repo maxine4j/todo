@@ -1,5 +1,23 @@
 .signup-container {
     max-width: var(--app-width);
     margin: auto;
-    align-items: center;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+
+    h1 {
+        text-align: center;
+        color: white;
+        margin: 0;
+        padding: 30px 0;
+    }
+
+    .card-top {
+        border-radius: 10px 10px 0 0;
+        background: var(--primary-grad);
+    }
+
+    .card-bottom {
+        border-radius: 0 0 10px 10px;
+        background: var(--col-card-1);
+    }
 }

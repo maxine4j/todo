@@ -5,10 +5,14 @@ import './SignUpPage.scss';
 
 const SignUpPage = () => (
     <div className="signup-container">
-        <h1>Sign Up</h1>
-        <FirebaseContext.Consumer>
-            {firebase => <SignUpForm firebase={firebase} />}
-        </FirebaseContext.Consumer>
+        <div className="card-top">
+            <h1>Sign Up</h1>
+        </div>
+        <div className="card-bottom">
+            <FirebaseContext.Consumer>
+                {firebase => <SignUpForm firebase={firebase} />}
+            </FirebaseContext.Consumer>
+        </div>
     </div>
 );
 

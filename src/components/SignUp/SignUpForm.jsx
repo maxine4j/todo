@@ -24,7 +24,7 @@ const SignUpForm = ({ firebase }) => {
     };
 
     return (
-        <form onSubmit={signUpSubmit} action="none">
+        <form onSubmit={signUpSubmit}>
             {error && <p className="error">{error.message}</p>}
             <input
                 name="username"
