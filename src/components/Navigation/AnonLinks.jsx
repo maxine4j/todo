@@ -4,12 +4,12 @@ import * as ROUTES from '../../routes';
 
 const AnonLinks = () => (
     <>
-    <li>
-        <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-    </li>
-    <li>
-        <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-    </li>
+        <li>
+            <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+        </li>
+        <li>
+            <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+        </li>
     </>
 );
 

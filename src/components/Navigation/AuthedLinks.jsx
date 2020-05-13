@@ -7,9 +7,9 @@ const AuthedLinks = () => {
 
     return (
         <li>
-            <a href='/' onClick={() => dispatch(signOut())}>Sign Out</a>
+            <a href="/" onClick={() => dispatch(signOut())}>Sign Out</a>
         </li>
     );
-}
+};
 
 export default AuthedLinks;

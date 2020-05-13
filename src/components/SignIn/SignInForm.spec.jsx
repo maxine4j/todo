@@ -1,8 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { render, fireEvent } from '@testing-library/react';
-import SignInForm from './SignInForm';
 import configureStore from 'redux-mock-store';
+import SignInForm from './SignInForm';
 
 const mockStore = configureStore([]);
 
@@ -13,24 +13,24 @@ describe('SignInForm', () => {
         store = mockStore({
             auth: {
                 signInError: null,
-            }
+            },
         });
         store.dispatch = jest.fn();
     });
 
     it('should render the form fields', () => {
-        const dom = render(<Provider store={store}><SignInForm/></Provider>);
+        const dom = render(<Provider store={store}><SignInForm /></Provider>);
 
         expect(dom.getByPlaceholderText('Email')).toBeInTheDocument();
         expect(dom.getByPlaceholderText('Password')).toBeInTheDocument();
-        
+
         const signIpBtn = dom.getByText('Sign In');
         expect(signIpBtn).toBeInTheDocument();
         expect(signIpBtn).toBeDisabled();
     });
 
     it('should enable the submit button when fields are valid', () => {
-        const dom = render(<Provider store={store}><SignInForm/></Provider>);
+        const dom = render(<Provider store={store}><SignInForm /></Provider>);
 
         const signInBtn = dom.getByText('Sign In');
         const email = dom.getByPlaceholderText('Email');
@@ -50,7 +50,7 @@ describe('SignInForm', () => {
     });
 
     it('should dispatch an action when sign in is clicked and valid', () => {
-        const dom = render(<Provider store={store}><SignInForm/></Provider>);
+        const dom = render(<Provider store={store}><SignInForm /></Provider>);
 
         const signInBtn = dom.getByText('Sign In');
         const email = dom.getByPlaceholderText('Email');

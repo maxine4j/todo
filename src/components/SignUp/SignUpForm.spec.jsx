@@ -13,26 +13,26 @@ describe('SignUpForm', () => {
         store = mockStore({
             auth: {
                 signInError: null,
-            }
+            },
         });
         store.dispatch = jest.fn();
     });
 
     it('should render the form fields', () => {
-        const dom = render(<Provider store={store}><SignUpForm/></Provider>);
+        const dom = render(<Provider store={store}><SignUpForm /></Provider>);
 
         expect(dom.getByPlaceholderText('Username')).toBeInTheDocument();
         expect(dom.getByPlaceholderText('Email')).toBeInTheDocument();
         expect(dom.getByPlaceholderText('Password')).toBeInTheDocument();
         expect(dom.getByPlaceholderText('Confirm Password')).toBeInTheDocument();
-        
+
         const signUpBtn = dom.getByText('Sign Up');
         expect(signUpBtn).toBeInTheDocument();
         expect(signUpBtn).toBeDisabled();
     });
 
     it('should enable the submit button when fields are valid', () => {
-        const dom = render(<Provider store={store}><SignUpForm/></Provider>);
+        const dom = render(<Provider store={store}><SignUpForm /></Provider>);
 
         const signUpBtn = dom.getByText('Sign Up');
         const userName = dom.getByPlaceholderText('Username');
@@ -66,7 +66,7 @@ describe('SignUpForm', () => {
     });
 
     it('should dispatch an action when sign up is clicked and valid', () => {
-        const dom = render(<Provider store={store}><SignUpForm/></Provider>);
+        const dom = render(<Provider store={store}><SignUpForm /></Provider>);
 
         const signUpBtn = dom.getByText('Sign Up');
         const userName = dom.getByPlaceholderText('Username');

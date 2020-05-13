@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SignUpForm from './SignUpForm';
 import './SignUpPage.scss';
-import { Link } from 'react-router-dom';
 import * as ROUTES from '../../routes';
 
 const SignUpPage = () => (
@@ -12,7 +12,10 @@ const SignUpPage = () => (
         <div className="card-bottom">
             <SignUpForm />
             <p className="signin-msg">
-                Already have an account? <Link to={ROUTES.SIGN_IN}>Sign In</Link>.
+                Already have an account?
+                {' '}
+                <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+                .
             </p>
         </div>
     </div>
