@@ -6,18 +6,17 @@ import './SignUpForm.scss';
 const SignUpForm = () => {
     const dispatch = useDispatch();
 
-    const error = useSelector(state => state.auth.signUpError);
+    const error = useSelector((state) => state.auth.signUpError);
 
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState('');
 
-    const isFormValid = 
-        username !== '' &&
-        email && email.match(/.*@.*/) &&
-        password.length >= 6 &&
-        password === passwordConfirm;
+    const isFormValid = username !== ''
+        && email && email.match(/.*@.*/)
+        && password.length >= 6
+        && password === passwordConfirm;
 
     const signUpSubmit = (event) => {
         event.preventDefault();
@@ -57,14 +56,15 @@ const SignUpForm = () => {
                 type="password"
                 placeholder="Confirm Password"
             />
-            <button 
-                className="btn-primary" 
-                disabled={!isFormValid} 
-                type="submit">
-                    Sign Up
+            <button
+                className="btn-primary"
+                disabled={!isFormValid}
+                type="submit"
+            >
+                Sign Up
             </button>
         </form>
     );
-}
+};
 
 export default SignUpForm;

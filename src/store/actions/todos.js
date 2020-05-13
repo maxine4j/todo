@@ -1,6 +1,6 @@
-import firebase from '../firebase'
-import 'firebase/database'
-import { FETCH_TODOS } from '../actions/types';
+import firebase from '../firebase';
+import 'firebase/database';
+import { FETCH_TODOS } from './types';
 
 const todos = firebase.database().child('todos');
 
@@ -13,10 +13,10 @@ export const completeToDo = (completeTodo) => async (dispatch) => {
 };
 
 export const fetchTodos = () => async (dispatch) => {
-    todos.on('value', snapshot => {
+    todos.on('value', (snapshot) => {
         dispatch({
             type: FETCH_TODOS,
-            payload: snapshot.val()
+            payload: snapshot.val(),
         });
     });
 };

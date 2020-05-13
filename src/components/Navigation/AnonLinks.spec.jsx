@@ -9,5 +9,5 @@ describe('AnonLinks', () => {
 
         expect(dom.getByText('Sign Up')).toBeInTheDocument();
         expect(dom.getByText('Sign In')).toBeInTheDocument();
-    })
-})
+    });
+});

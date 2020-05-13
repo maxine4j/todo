@@ -1,9 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { render } from '@testing-library/react';
-import NavigationBar from './NavigationBar';
 import { MemoryRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
+import NavigationBar from './NavigationBar';
 
 const mockStore = configureStore([]);
 
@@ -13,8 +13,8 @@ describe('NavigationBar', () => {
             firebase: {
                 auth: {
                     uid: undefined,
-                }
-            }
+                },
+            },
         });
 
         const dom = render(
@@ -22,7 +22,7 @@ describe('NavigationBar', () => {
                 <MemoryRouter>
                     <NavigationBar />
                 </MemoryRouter>
-            </Provider>
+            </Provider>,
         );
 
         expect(dom.getByText('Home')).toBeInTheDocument();
@@ -35,8 +35,8 @@ describe('NavigationBar', () => {
             firebase: {
                 auth: {
                     uid: 123,
-                }
-            }
+                },
+            },
         });
 
         const dom = render(
@@ -44,7 +44,7 @@ describe('NavigationBar', () => {
                 <MemoryRouter>
                     <NavigationBar />
                 </MemoryRouter>
-            </Provider>
+            </Provider>,
         );
 
         expect(dom.getByText('Home')).toBeInTheDocument();

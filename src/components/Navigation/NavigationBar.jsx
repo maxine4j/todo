@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import * as ROUTES from '../../routes';
 import './NavigationBar.scss';
-import { useSelector } from 'react-redux';
 import AnonLinks from './AnonLinks';
 import AuthedLinks from './AuthedLinks';
 
 const NavigationBar = () => {
-    const auth = useSelector(state => state.firebase.auth);
-    
+    const auth = useSelector((state) => state.firebase.auth);
+
     const links = auth.uid ? <AuthedLinks /> : <AnonLinks />;
 
     return (
@@ -21,6 +21,6 @@ const NavigationBar = () => {
             </ul>
         </nav>
     );
-}
+};
 
 export default NavigationBar;

@@ -5,8 +5,8 @@ import './SignInForm.scss';
 
 const SignInForm = () => {
     const dispatch = useDispatch();
-    
-    const error = useSelector(state => state.auth.signInError);
+
+    const error = useSelector((state) => state.auth.signInError);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -37,11 +37,12 @@ const SignInForm = () => {
                 type="password"
                 placeholder="Password"
             />
-            <button 
-                className="btn-primary" 
-                disabled={!isFormValid} 
-                type="submit">
-                    Sign In
+            <button
+                className="btn-primary"
+                disabled={!isFormValid}
+                type="submit"
+            >
+                Sign In
             </button>
         </form>
     );
