@@ -19,5 +19,16 @@
     .card-bottom {
         border-radius: 0 0 10px 10px;
         background: var(--col-card-1);
+        
+        .signup-msg {
+            text-align: center;
+            color: #777777;
+            margin: 0;
+            padding: 10px;
+
+            a {
+                text-decoration: none;
+            }
+        }
     }
 }
