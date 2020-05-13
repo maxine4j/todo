@@ -1,0 +1,32 @@
+nav {
+    padding: 10px;
+    border-radius: 8px;
+    // background-color: var(--col-card-1);
+    margin: auto;
+    max-width: var(--app-width);
+    // box-shadow: var(--shadow);
+
+    ul {
+        display: flex;
+        list-style: none;
+        justify-content: flex-end;
+
+        li {
+
+            a {
+                margin: 10px;
+                padding: 10px;
+                text-decoration: none;
+                color: var(--col-text);
+                border-radius: 5px;
+                box-shadow: var(--shadow);
+                background-color: var(--col-card-1);
+
+                &:hover {
+                    color: white;
+                    background: var(--primary-grad);
+                }
+            }
+        }
+    }
+}

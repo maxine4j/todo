@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../routes';
+import './NavigationBar.scss';
 
 const NavigationBar = () => (
     <nav>
