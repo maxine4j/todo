@@ -1,0 +1,22 @@
+form {
+    border-radius: 5px;
+    padding: 20px;
+    margin: auto;
+
+    .error {
+        color: rgb(216, 74, 74);
+        text-align: center;
+        margin: 20px;
+    }
+
+    input {
+        display: block;
+        margin: 10px auto;
+        max-width: 260px;
+    }
+
+    button {
+        display: block;
+        margin: 20px auto;
+    }
+}
