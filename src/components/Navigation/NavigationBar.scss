@@ -1,10 +1,8 @@
 nav {
     padding: 10px;
     border-radius: 8px;
-    // background-color: var(--col-card-1);
     margin: auto;
     max-width: var(--app-width);
-    // box-shadow: var(--shadow);
 
     ul {
         display: flex;
@@ -12,7 +10,6 @@ nav {
         justify-content: flex-end;
 
         li {
-
             a {
                 margin: 10px;
                 padding: 10px;
@@ -21,6 +18,7 @@ nav {
                 border-radius: 5px;
                 box-shadow: var(--shadow);
                 background-color: var(--col-card-1);
+                cursor: pointer;
 
                 &:hover {
                     color: white;

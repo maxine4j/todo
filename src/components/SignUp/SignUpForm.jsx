@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { signUp } from '../../store/actions/auth';
 import './SignUpForm.scss';
 
-const SignUpForm = ({ firebase }) => {
+const SignUpForm = () => {
+    const dispatch = useDispatch();
+
+    const error = useSelector(state => state.auth.signUpError);
+
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState('');
-    const [error, setError] = useState('');
 
     const isFormValid = 
         username !== '' &&
@@ -17,15 +22,13 @@ const SignUpForm = ({ firebase }) => {
     const signUpSubmit = (event) => {
         event.preventDefault();
         if (isFormValid) {
-            firebase.createUserWithEmailAndPassword(email, password)
-            .then((authUser) => console.log("authed a user!"))
-            .catch((err) => setError(err));
+            dispatch(signUp({ email, password }));
         }
     };
 
     return (
         <form onSubmit={signUpSubmit}>
-            {error && <p className="error">{error.message}</p>}
+            {error && <p className="error">{error}</p>}
             <input
                 name="username"
                 value={username}

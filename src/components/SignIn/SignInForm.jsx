@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { signIn } from '../../store/actions/auth';
 import './SignInForm.scss';
 
-const SignInForm = ({ firebase }) => {
+const SignInForm = () => {
+    const dispatch = useDispatch();
+    
+    const error = useSelector(state => state.auth.signInError);
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
 
-    const isFormValid = 
-        email !== '' &&
-        password !== '';
+    const isFormValid = email !== '' && password !== '';
 
     const signInSubmit = (event) => {
         event.preventDefault();
         if (isFormValid) {
-            firebase.signInWithEmailAndPassword(email, password)
-            .then((authUser) => console.log("authed a user!"))
-            .catch((err) => setError(err));
+            dispatch(signIn({ email, password }));
         }
     };
 
     return (
         <form onSubmit={signInSubmit}>
-            {error && <p className="error">{error.message}</p>}
+            {error && <p className="error">{error}</p>}
             <input
                 name="email"
                 value={email}
@@ -44,6 +45,6 @@ const SignInForm = ({ firebase }) => {
             </button>
         </form>
     );
-}
+};
 
 export default SignInForm;
