@@ -4,32 +4,27 @@ import {
     SIGNOUT_SUCCESS,
 } from './types';
 
-export const signIn = (credentials) => (dispatch, getState, { getFirebase }) => {
-    const firebase = getFirebase();
-    firebase.auth().signInWithEmailAndPassword(
-        credentials.email, credentials.password,
-    ).then(() => {
+export const signIn = (credentials) => async (dispatch, getState, { getFirebase }) => {
+    try {
+        await getFirebase().auth()
+            .signInWithEmailAndPassword(credentials.email, credentials.password);
         dispatch({ type: SIGNIN_SUCCESS });
-    }).catch((err) => {
+    } catch (err) {
         dispatch({ type: SIGNIN_ERROR, err });
-    });
+    }
 };
 
-export const signUp = (credentials) => (dispatch, getState, { getFirebase }) => {
-    const firebase = getFirebase();
-    firebase.auth().createUserWithEmailAndPassword(
-        credentials.email, credentials.password,
-    ).then(() => {
+export const signUp = (credentials) => async (dispatch, getState, { getFirebase }) => {
+    try {
+        await getFirebase().auth()
+            .createUserWithEmailAndPassword(credentials.email, credentials.password);
         dispatch({ type: SIGNUP_SUCCESS });
-    }).catch((err) => {
+    } catch (err) {
         dispatch({ type: SIGNUP_ERROR, err });
-    });
+    }
 };
 
-export const signOut = () => (dispatch, getState, { getFirebase }) => {
-    const firebase = getFirebase();
-    firebase.auth().signOut()
-        .then(() => {
-            dispatch({ type: SIGNOUT_SUCCESS });
-        });
+export const signOut = () => async (dispatch, getState, { getFirebase }) => {
+    await getFirebase().auth().signOut();
+    dispatch({ type: SIGNOUT_SUCCESS });
 };
