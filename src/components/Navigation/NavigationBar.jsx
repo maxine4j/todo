@@ -15,7 +15,7 @@ const NavigationBar = () => {
         <nav>
             <ul>
                 <li>
-                    <Link to={ROUTES.LANDING}>Home</Link>
+                    <Link to={ROUTES.LANDING}>&#47;&#47; TODO:</Link>
                 </li>
                 {links}
             </ul>

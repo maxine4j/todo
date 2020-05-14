@@ -25,7 +25,7 @@ describe('NavigationBar', () => {
             </Provider>,
         );
 
-        expect(dom.getByText('Home')).toBeInTheDocument();
+        expect(dom.getByText('// TODO:')).toBeInTheDocument();
         expect(dom.getByText('Sign Up')).toBeInTheDocument();
         expect(dom.getByText('Sign In')).toBeInTheDocument();
     });
@@ -47,7 +47,7 @@ describe('NavigationBar', () => {
             </Provider>,
         );
 
-        expect(dom.getByText('Home')).toBeInTheDocument();
+        expect(dom.getByText('// TODO:')).toBeInTheDocument();
         expect(dom.getByText('Sign Out')).toBeInTheDocument();
     });
 });
