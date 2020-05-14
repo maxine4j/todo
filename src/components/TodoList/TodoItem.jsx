@@ -31,6 +31,11 @@ const TodoItem = ({ todoId, body, complete }) => {
                 onKeyUp={onBodyKeyUp}
                 onBlur={onBodyBlur}
             />
+            <button
+                type="button"
+                className="delete-btn"
+                label="delete"
+            />
         </div>
     );
 };

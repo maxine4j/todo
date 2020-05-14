@@ -4,6 +4,35 @@
     width: 100%;
     display: flex;
 
+    .delete-btn {
+        display: none;
+
+        background-image: url("./trash.svg");
+        background-color: rgb(173, 82, 82);
+        background-size: 70% 70%;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        margin: 25px 5px;
+        width: 30px;
+        height: 30px;
+        border: none;
+        border-radius: 100%;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover, &:active {
+            background-color: rgb(168, 119, 118);
+        }
+    }
+
+    &:hover .delete-btn {
+        display: block;
+    }
+
     input[type="text"] {
         font-size: 1.1rem;
         padding: 15px 20px;
@@ -26,7 +55,6 @@
         }
 
         &:checked {
-            background: var(--primary-grad);
             background-image: url("./check.svg");
             background-color: #50bd7b;
             background-size: 60% 60%;
