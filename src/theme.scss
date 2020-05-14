@@ -40,3 +40,38 @@ input {
         cursor: auto;
     }
 }
+
+.card {
+    max-width: var(--app-width);
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+
+    h1 {
+        text-align: center;
+        color: white;
+        margin: 0;
+        padding: 30px 0;
+    }
+
+    p {
+        text-align: center;
+        margin: 0;
+        padding: 20px 0;
+        font-size: 1.1rem;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .card-top {
+        border-radius: 10px 10px 0 0;
+        background: var(--primary-grad);
+    }
+
+    .card-bottom {
+        border-radius: 0 0 10px 10px;
+        background: var(--col-card-1);
+    }
+}
