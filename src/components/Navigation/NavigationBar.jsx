@@ -7,9 +7,8 @@ import AnonLinks from './AnonLinks';
 import AuthedLinks from './AuthedLinks';
 
 const NavigationBar = () => {
-    const auth = useSelector((state) => state.firebase.auth);
-
-    const links = auth.uid ? <AuthedLinks /> : <AnonLinks />;
+    const { uid } = useSelector((state) => state.firebase.auth);
+    const links = uid ? <AuthedLinks /> : <AnonLinks />;
 
     return (
         <nav>
