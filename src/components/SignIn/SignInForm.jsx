@@ -21,7 +21,7 @@ const SignInForm = () => {
     };
 
     return (
-        <form onSubmit={signInSubmit}>
+        <form className="signin-form" onSubmit={signInSubmit}>
             {error && <p className="error">{error}</p>}
             <input
                 name="email"

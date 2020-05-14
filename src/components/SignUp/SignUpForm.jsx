@@ -26,7 +26,7 @@ const SignUpForm = () => {
     };
 
     return (
-        <form onSubmit={signUpSubmit}>
+        <form className="signup-form" onSubmit={signUpSubmit}>
             {error && <p className="error">{error}</p>}
             <input
                 name="username"

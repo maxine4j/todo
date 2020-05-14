@@ -9,11 +9,13 @@
 
         background-image: url("./trash.svg");
         background-color: rgb(173, 82, 82);
-        background-size: 70% 70%;
+        background-size: 60% 60%;
         background-position: center;
         background-repeat: no-repeat;
 
         margin: 25px 5px;
+        min-width: 30px;
+        min-height: 30px;
         width: 30px;
         height: 30px;
         border: none;
@@ -37,13 +39,14 @@
         font-size: 1.1rem;
         padding: 15px 20px;
         flex-grow: 1;
+        width: 100%;
     }
 
     input[type="checkbox"] {
         appearance: none;
         border-radius: 100%;
         padding: 20px;
-        margin: 20px;
+        margin: 20px 10px;
         width: 20px;
         height: 20px;
         cursor: pointer;
