@@ -9,3 +9,4 @@ export const SIGNOUT_SUCCESS = 'SIGNOUT_SUCCESS';
 export const TODO_CREATE = 'TODO_CREATE';
 export const TODO_SET_COMPLETE = 'TODO_SET_COMPLETE';
 export const TODO_EDIT = 'TODO_EDIT';
+export const TODO_DELETE = 'TODO_DELETE';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { setCompleteTodo, editTodo } from '../../store/actions/todos';
+import { setCompleteTodo, editTodo, deleteTodo } from '../../store/actions/todos';
 import './TodoItem.scss';
 
 const TodoItem = ({ todoId, body, complete }) => {
@@ -14,6 +14,8 @@ const TodoItem = ({ todoId, body, complete }) => {
             dispatch(editTodo(todoId, event.target.value));
         }
     };
+
+    const onDeleteClicked = (event) => dispatch(deleteTodo(todoId));
 
     return (
         <div className="todo-item">
@@ -32,9 +34,11 @@ const TodoItem = ({ todoId, body, complete }) => {
                 onBlur={onBodyBlur}
             />
             <button
+                data-testid="delete-btn"
                 type="button"
                 className="delete-btn"
                 label="delete"
+                onClick={onDeleteClicked}
             />
         </div>
     );

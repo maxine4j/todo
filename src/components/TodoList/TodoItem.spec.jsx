@@ -44,4 +44,25 @@ describe('TodoItem', () => {
         fireEvent.keyUp(bodyInput, { key: 'Enter' });
         expect(store.dispatch).toHaveBeenCalledTimes(1);
     });
+
+    it('should dispatch an action when the body is changed and input loses focus', () => {
+        const body = 'finish this app';
+        const complete = false;
+        const dom = render(<Provider store={store}><TodoItem body={body} complete={complete} /></Provider>);
+
+        const bodyInput = dom.getByDisplayValue(body);
+        fireEvent.change(bodyInput, { target: { value: 'a new body' } });
+        fireEvent.blur(bodyInput);
+        expect(store.dispatch).toHaveBeenCalledTimes(1);
+    });
+
+    it('should dispatch an action when the delete button is clicked', () => {
+        const body = 'finish this app';
+        const complete = false;
+        const dom = render(<Provider store={store}><TodoItem body={body} complete={complete} /></Provider>);
+
+        const deleteBtn = dom.getByTestId('delete-btn');
+        fireEvent.click(deleteBtn);
+        expect(store.dispatch).toHaveBeenCalledTimes(1);
+    });
 });

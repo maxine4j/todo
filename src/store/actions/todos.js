@@ -1,4 +1,6 @@
-import { TODO_EDIT, TODO_CREATE, TODO_SET_COMPLETE } from './types';
+import {
+    TODO_EDIT, TODO_CREATE, TODO_SET_COMPLETE, TODO_DELETE,
+} from './types';
 
 const defaultTodo = {
     body: '',
@@ -41,4 +43,12 @@ export const editTodo = (todoID, body) => async (dispatch, getState, { getFireba
         body,
     });
     dispatch({ type: TODO_EDIT });
+};
+
+export const deleteTodo = (todoID) => async (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firestore = getFirestore();
+    const firebase = getFirebase();
+    const todo = await getTodoByID(firebase, firestore, todoID);
+    await todo.delete();
+    dispatch({ type: TODO_DELETE });
 };

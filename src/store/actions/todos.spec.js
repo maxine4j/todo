@@ -1,9 +1,11 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import {
-    TODO_CREATE, TODO_SET_COMPLETE, TODO_EDIT,
+    TODO_CREATE, TODO_SET_COMPLETE, TODO_EDIT, TODO_DELETE,
 } from './types';
-import { createTodo, setCompleteTodo, editTodo } from './todos';
+import {
+    createTodo, setCompleteTodo, editTodo, deleteTodo,
+} from './todos';
 
 const mockGetFirebase = () => ({
     auth: jest.fn(() => ({
@@ -16,6 +18,7 @@ const mockGetFirestore = () => ({
         add: jest.fn(),
         doc: jest.fn((id) => ({
             update: jest.fn(),
+            delete: jest.fn(),
         })),
     })),
 });
@@ -52,6 +55,14 @@ describe('todo actions', () => {
         const expectedActions = [{ type: TODO_EDIT }];
 
         return store.dispatch(editTodo(1, 'new body')).then(() => {
+            expect(store.getActions()).toEqual(expectedActions);
+        });
+    });
+
+    it('should create a todo delete action', () => {
+        const expectedActions = [{ type: TODO_DELETE }];
+
+        return store.dispatch(deleteTodo(1)).then(() => {
             expect(store.getActions()).toEqual(expectedActions);
         });
     });
