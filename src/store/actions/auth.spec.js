@@ -41,43 +41,43 @@ describe('auth actions', () => {
         store = mockStore({});
     });
 
-    it('should create a sign in success action', () => {
+    it('should create a sign in success action', async () => {
+        expect.assertions(1);
         const expectedActions = [{ type: SIGNIN_SUCCESS }];
 
-        return store.dispatch(signIn(validCreds)).then(() => {
-            expect(store.getActions()).toEqual(expectedActions);
-        });
+        await store.dispatch(signIn(validCreds));
+        expect(store.getActions()).toEqual(expectedActions);
     });
 
-    it('should create a sign in error action', () => {
+    it('should create a sign in error action', async () => {
+        expect.assertions(1);
         const expectedActions = [{ type: SIGNIN_ERROR, err: Error() }];
 
-        return store.dispatch(signIn({ email: 'invalid', password: '1234' })).then(() => {
-            expect(store.getActions()).toEqual(expectedActions);
-        });
+        await store.dispatch(signIn({ email: 'invalid', password: '1234' }));
+        expect(store.getActions()).toEqual(expectedActions);
     });
 
-    it('should create a sign up success action', () => {
+    it('should create a sign up success action', async () => {
+        expect.assertions(1);
         const expectedActions = [{ type: SIGNUP_SUCCESS }];
 
-        return store.dispatch(signUp({ email: 'new@example.com', password: 'pass123' })).then(() => {
-            expect(store.getActions()).toEqual(expectedActions);
-        });
+        await store.dispatch(signUp({ email: 'new@example.com', password: 'pass123' }));
+        expect(store.getActions()).toEqual(expectedActions);
     });
 
-    it('should create a sign up error action', () => {
+    it('should create a sign up error action', async () => {
+        expect.assertions(1);
         const expectedActions = [{ type: SIGNUP_ERROR, err: Error() }];
 
-        return store.dispatch(signUp(validCreds)).then(() => {
-            expect(store.getActions()).toEqual(expectedActions);
-        });
+        await store.dispatch(signUp(validCreds));
+        expect(store.getActions()).toEqual(expectedActions);
     });
 
-    it('should create a sign out success action', () => {
+    it('should create a sign out success action', async () => {
+        expect.assertions(1);
         const expectedActions = [{ type: SIGNOUT_SUCCESS }];
 
-        return store.dispatch(signOut()).then(() => {
-            expect(store.getActions()).toEqual(expectedActions);
-        });
+        await store.dispatch(signOut());
+        expect(store.getActions()).toEqual(expectedActions);
     });
 });

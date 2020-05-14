@@ -35,35 +35,35 @@ describe('todo actions', () => {
         store = mockStore({});
     });
 
-    it('should create a todo create action', () => {
+    it('should create a todo create action', async () => {
+        expect.assertions(1);
         const expectedActions = [{ type: TODO_CREATE }];
 
-        return store.dispatch(createTodo()).then(() => {
-            expect(store.getActions()).toEqual(expectedActions);
-        });
+        await store.dispatch(createTodo());
+        expect(store.getActions()).toEqual(expectedActions);
     });
 
-    it('should create a todo set complete action', () => {
+    it('should create a todo set complete action', async () => {
+        expect.assertions(1);
         const expectedActions = [{ type: TODO_SET_COMPLETE }];
 
-        return store.dispatch(setCompleteTodo(1, true)).then(() => {
-            expect(store.getActions()).toEqual(expectedActions);
-        });
+        await store.dispatch(setCompleteTodo(1, true));
+        expect(store.getActions()).toEqual(expectedActions);
     });
 
-    it('should create a todo edit action', () => {
+    it('should create a todo edit action', async () => {
+        expect.assertions(1);
         const expectedActions = [{ type: TODO_EDIT }];
 
-        return store.dispatch(editTodo(1, 'new body')).then(() => {
-            expect(store.getActions()).toEqual(expectedActions);
-        });
+        await store.dispatch(editTodo(1, 'new body'));
+        expect(store.getActions()).toEqual(expectedActions);
     });
 
-    it('should create a todo delete action', () => {
+    it('should create a todo delete action', async () => {
+        expect.assertions(1);
         const expectedActions = [{ type: TODO_DELETE }];
 
-        return store.dispatch(deleteTodo(1)).then(() => {
-            expect(store.getActions()).toEqual(expectedActions);
-        });
+        await store.dispatch(deleteTodo(1));
+        expect(store.getActions()).toEqual(expectedActions);
     });
 });
