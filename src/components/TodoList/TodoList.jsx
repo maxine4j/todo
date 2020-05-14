@@ -17,6 +17,7 @@ const TodoList = () => {
             doc: auth.uid,
             subcollections: [{ collection: 'todos' }],
             storeAs: 'myTodos',
+            orderBy: ['createdAt', 'desc'],
         },
     ]);
 
