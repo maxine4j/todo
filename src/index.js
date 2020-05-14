@@ -7,8 +7,6 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { getFirestore, createFirestoreInstance } from 'redux-firestore';
 import { ReactReduxFirebaseProvider, getFirebase, isLoaded } from 'react-redux-firebase';
-
-
 import reducers from './store/reducers';
 import * as serviceWorker from './serviceWorker';
 import App from './App';
@@ -29,6 +27,8 @@ const rrfProps = {
     firebase,
     config: {
         attachAuthIsReady: true,
+        useFirestoreForProfile: true,
+        userProfile: 'users',
     },
     dispatch: store.dispatch,
     createFirestoreInstance,

@@ -17,6 +17,7 @@
         "indent": ["error", 4],
         "no-unused-vars": ["warn", { "args": "none" }],
         "react/jsx-indent": ["warn", 4],
-        "react/jsx-indent-props": ["warn", 4]
+        "react/jsx-indent-props": ["warn", 4],
+        "max-len": ["warn", 120]
     }
 }
