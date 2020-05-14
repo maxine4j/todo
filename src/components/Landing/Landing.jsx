@@ -4,13 +4,8 @@ import AuthedLanding from './AuthedLanding';
 import AnonLanding from './AnonLanding';
 
 const Landing = () => {
-    const auth = useSelector((state) => state.firebase.auth);
-
-    if (auth.uid) {
-        return <AuthedLanding />;
-    }
-
-    return <AnonLanding />;
+    const { uid } = useSelector((state) => state.firebase.auth);
+    return uid ? <AuthedLanding /> : <AnonLanding />;
 };
 
 export default Landing;
