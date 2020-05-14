@@ -8,6 +8,7 @@
     --shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     --font-size: 16px;
     --primary-grad: linear-gradient(96.33deg, #82bc25 0, #50bd7b 100%);
+    --primary-active-grad: linear-gradient(96.33deg, #8cca27 0, #54c581 100%);
     --disabled-grad: linear-gradient(96.33deg, #929292 0, #7a7a7a 100%);
     --app-width: 600px;
 
@@ -34,6 +35,10 @@ input {
     padding: 10px 16px;
     box-shadow: var(--shadow);
     cursor: pointer;
+
+    &:hover {
+        background: var(--primary-active-grad);
+    }
 
     &:disabled {
         background: var(--disabled-grad);

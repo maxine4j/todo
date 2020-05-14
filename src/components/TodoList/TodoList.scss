@@ -1,0 +1,18 @@
+.todo-list {
+    padding: 20px;
+
+    .new-todo-btn {
+        display: block;
+        margin: auto;
+        width: 50%;
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+}

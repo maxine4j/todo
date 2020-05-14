@@ -16,6 +16,7 @@ export const createTodo = (todo) => async (dispatch, getState, { getFirebase, ge
     await todos.add({
         ...defaultTodo,
         ...todo,
+        createdAt: new Date(),
     });
     dispatch({ type: TODO_CREATE });
 };

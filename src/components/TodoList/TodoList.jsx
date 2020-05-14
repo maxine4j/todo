@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useFirestoreConnect } from 'react-redux-firebase';
 import TodoItem from './TodoItem';
 import { createTodo } from '../../store/actions/todos';
+import './TodoList.scss';
 
 const TodoList = () => {
     const dispatch = useDispatch();
@@ -24,12 +25,13 @@ const TodoList = () => {
     };
 
     return (
-        <div>
+        <div className="todo-list">
             <button
+                className="new-todo-btn btn-primary"
                 type="button"
                 onClick={addNewTodo}
             >
-                New TODO
+                Add new todo
             </button>
             <ul>
                 {todos && todos.map((todo) => (
