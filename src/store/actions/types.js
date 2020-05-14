@@ -6,4 +6,6 @@ export const SIGNUP_ERROR = 'SIGNUP_ERROR';
 
 export const SIGNOUT_SUCCESS = 'SIGNOUT_SUCCESS';
 
-export const FETCH_TODOS = 'FETCH_TODOS';
+export const TODO_CREATE = 'TODO_CREATE';
+export const TODO_SET_COMPLETE = 'TODO_SET_COMPLETE';
+export const TODO_EDIT = 'TODO_EDIT';

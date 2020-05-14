@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import { Provider, useSelector } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { getFirestore, createFirestoreInstance } from 'redux-firestore';
+import { getFirestore, createFirestoreInstance, reduxFirestore } from 'redux-firestore';
 import { ReactReduxFirebaseProvider, getFirebase, isLoaded } from 'react-redux-firebase';
 import reducers from './store/reducers';
 import * as serviceWorker from './serviceWorker';
@@ -20,6 +20,7 @@ const store = createStore(
             getFirestore,
             getFirebase,
         })),
+        reduxFirestore(firebase),
     ),
 );
 
